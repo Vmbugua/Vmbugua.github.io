@@ -248,22 +248,15 @@ img { max-width: 100%; display: block; }
 
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
-.photo-placeholder {
+.profile-photo {
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  background: var(--card);
-  border: 3px dashed var(--accent);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  color: var(--text-secondary);
-  font-size: 13.5px;
-  font-weight: 500;
+  object-fit: cover;
+  border: 3px solid var(--accent);
   box-shadow: var(--shadow);
+  margin: 0 auto;
+  display: block;
 }
 
 @media (max-width: 820px) {
