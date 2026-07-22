@@ -32,12 +32,40 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   revealEls.forEach((el) => observer.observe(el));
 
-  // Contact form: front-end only, no backend
-  const form = document.querySelector("#contact-form");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("This form isn't connected to a backend yet — hook it up to an email service or form endpoint to receive messages.");
-    });
-  }
+  // Contact form — submits to Formspree without leaving the page
+const form = document.querySelector("#contact-form");
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector("button[type='submit']");
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+        form.reset();
+        submitBtn.textContent = "Message Sent";
+      } else {
+        submitBtn.textContent = "Something went wrong — try again";
+        submitBtn.disabled = false;
+      }
+    } catch (error) {
+      submitBtn.textContent = "Something went wrong — try again";
+      submitBtn.disabled = false;
+    }
+
+    setTimeout(() => {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }, 4000);
+  });
+}
 });
