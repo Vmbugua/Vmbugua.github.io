@@ -4,14 +4,14 @@
    =========================================================== */
 
 :root {
-  --accent: #f2a6b4;
-  --accent-dark: #e08696;
-  --bg: #faf3e8;
+  --accent: #d96c4c;
+  --accent-dark: #1f5c56;
+  --bg: #fbf6ef;
   --card: #ffffff;
-  --text: #3a3530;
-  --text-secondary: #6e6660;
+  --text: #2d2a26;
+  --text-secondary: #6e655c;
   --border: #ece1d2;
-  --shadow: 0 10px 30px -12px rgba(110, 102, 96, 0.25);
+  --shadow: 0 10px 30px -12px rgba(31, 92, 86, 0.2);
 
   --font: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
