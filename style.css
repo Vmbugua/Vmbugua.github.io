@@ -385,6 +385,12 @@ section:nth-of-type(even) { background: var(--bg-alt); }
   padding: 16px;
 }
 
+.project-thumb.placeholder {
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  font-size: 40px;
+}
+
 .project-body {
   padding: 22px;
   display: flex;
